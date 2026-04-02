@@ -4,7 +4,7 @@ class Student(models.Model):
     name = models.CharField(max_length=100)
     register_number = models.CharField(max_length=20, unique=True)
     department = models.CharField(max_length=50)
-    face_encoding = models.TextField()  # store AI face data
+    image = models.ImageField(upload_to='students/', null=True, blank=True)
 
     def __str__(self):
         return self.name
